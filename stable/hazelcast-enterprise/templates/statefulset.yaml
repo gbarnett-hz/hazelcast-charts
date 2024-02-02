@@ -18,6 +18,7 @@ metadata:
 spec:
   serviceName: {{ template "hazelcast.fullname" . }}
   replicas: {{ .Values.cluster.memberCount }}
+  podManagementPolicy: Parallel
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ template "hazelcast.name" . }}
